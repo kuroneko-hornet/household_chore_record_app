@@ -4,6 +4,7 @@
     1. Visual Studio Codeを起動
     2. File > open Folder > プロジェクトフォルダ クリック
     3. Ctrl + J でGit bashターミナル起動
+    4. git pull ※リモートの変更内容をローカルのmain branchに反映
     4. git switch -c <feature ブランチ名> ※ブランチを切る
     5. Python app.pyを実行
     6. コード編集・保存
@@ -14,7 +15,7 @@
     1. git status    ※変更状況を確認
     2. git add <変更ファイル名>
     3. git commit -m <メッセージ内容>
-    4. git log   ※メッセージ内容を確認する 
+    4. git log  ※メッセージ内容を確認する 
     5. git push
 
 3. レビュー依頼（ブラウザ作業）
@@ -28,4 +29,5 @@
 4. マージ（ブラウザ作業）
     1. Reviewerのレビュー完了後、コードが反映
     2. クラウドに反映完了後、ブラウザに変更される
+    3. git switch main  ※マージを確認後、branchをmainに戻す
 
