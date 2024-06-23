@@ -5,10 +5,10 @@
     2. File > open Folder > プロジェクトフォルダ クリック
     3. Ctrl + J でGit bashターミナル起動
     4. git pull ※リモートの変更内容をローカルのmain branchに反映
-    4. git switch -c <feature ブランチ名> ※ブランチを切る
-    5. Python app.pyを実行
-    6. コード編集・保存
-    7. テスト
+    5. git switch -c <feature ブランチ名> ※ブランチを切る
+    6. Python app.pyを実行
+    7. コード編集・保存
+    8. テスト
 
 2. リモートへコミット（ローカル作業）
     ※ブランチがmainではないことを必ず確認すること
