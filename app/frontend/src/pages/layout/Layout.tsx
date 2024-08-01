@@ -3,11 +3,6 @@ import { Outlet, NavLink, Link } from "react-router-dom";
 
 import styles from "./Layout.module.css";
 
-import { useLogin } from "../../authConfig";
-
-import { LoginButton } from "../../components/LoginButton";
-import { IconButton } from "@fluentui/react";
-
 const Layout = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef: RefObject<HTMLDivElement> = useRef(null);
@@ -62,10 +57,6 @@ const Layout = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className={styles.loginMenuContainer}>
-                        {useLogin && <LoginButton />}
-                        <IconButton iconProps={{ iconName: "GlobalNavButton" }} className={styles.menuToggle} onClick={toggleMenu} ariaLabel="Toggle menu" />
-                    </div>
                 </div>
             </header>
 
