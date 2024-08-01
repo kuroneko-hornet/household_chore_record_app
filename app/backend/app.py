@@ -6,16 +6,9 @@ from pathlib import Path
 from quart import (
     Blueprint,
     Quart,
-    abort,
-    current_app,
-    jsonify,
-    make_response,
-    request,
-    send_file,
     send_from_directory,
 )
 from quart_cors import cors
-from core.authentication import AuthenticationHelper
 
 bp = Blueprint("routes", __name__, static_folder="static")
 # Fix Windows registry issue with mimetypes
@@ -44,21 +37,6 @@ async def favicon():
 async def assets(path):
     return await send_from_directory(Path(__file__).resolve().parent / "static" / "assets", path)
 
-# Send MSAL.js settings to the client UI
-@bp.route("/auth_setup", methods=["GET"])
-def auth_setup():
-    auth_helper = AuthenticationHelper(
-        search_index="",
-        use_authentication=False,
-        server_app_id="",
-        server_app_secret="",
-        client_app_id="",
-        tenant_id="",
-        require_access_control=False,
-        enable_global_documents=False,
-        enable_unauthenticated_access=False,
-    )
-    return jsonify(auth_helper.get_auth_setup_for_client())
 
 def create_app():
     app = Quart(__name__)
